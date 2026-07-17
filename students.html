@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"],
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="bg-slate-950 font-poppins text-white min-h-screen">
+
+    <div class="max-w-5xl mx-auto p-8">
+
+        <h1 class="text-4xl font-bold text-center mb-10">
+            🎓 Student Management System
+        </h1>
+
+        <!-- Add Student Card -->
+
+        <div class="bg-slate-900 rounded-2xl p-6 border border-slate-700 shadow-lg">
+
+            <h2 class="text-2xl font-semibold mb-5">
+                Add Student
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-5">
+
+                <input
+                    id="studentName"
+                    type="text"
+                    placeholder="Student Name"
+                    class="bg-slate-800 p-4 rounded-xl outline-none border border-slate-700 focus:border-blue-500"
+                >
+
+                <input
+                    id="studentScore"
+                    type="number"
+                    placeholder="Student Score"
+                    class="bg-slate-800 p-4 rounded-xl outline-none border border-slate-700 focus:border-blue-500"
+                >
+
+            </div>
+
+            <button
+                id="addBtn"
+                class="mt-6 w-full bg-blue-600 hover:bg-blue-700 transition rounded-xl py-4 font-semibold">
+
+                Add Student
+
+            </button>
+
+        </div>
+
+
+        <div class="mt-8">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search Student..."
+                class="w-full bg-slate-900 p-4 rounded-xl border border-slate-700 outline-none focus:border-blue-500"
+            >
+
+        </div>
+
+        
+
+        <div class="flex gap-4 mt-6 flex-wrap">
+
+            <button class="bg-slate-800 px-6 py-2 rounded-lg hover:bg-blue-600 transition">
+                All
+            </button>
+
+            <button class="bg-slate-800 px-6 py-2 rounded-lg hover:bg-green-600 transition">
+                Passed
+            </button>
+
+            <button class="bg-slate-800 px-6 py-2 rounded-lg hover:bg-red-600 transition">
+                Failed
+            </button>
+
+        </div>
+
+        <!-- Student List -->
+
+        <div id="studentList" class="mt-8 space-y-4">
+
+            <!-- Student Card -->
+
+            <div class="bg-slate-900 p-5 rounded-xl flex justify-between items-center border border-slate-700">
+
+                <div>
+
+                    <h3 class="font-semibold text-lg">
+                        Chioma
+                    </h3>
+
+                    <p class="text-gray-400">
+                        Score: 80
+                    </p>
+
+                </div>
+
+                <button class="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-lg">
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="grid md:grid-cols-3 gap-5 mt-10">
+
+            <div class="bg-slate-900 rounded-xl p-6 border border-slate-700">
+
+                <h3 class="text-gray-400">
+                    Total Students
+                </h3>
+
+                <p id="totalStudents" class="text-3xl font-bold mt-2">
+                    1
+                </p>
+
+            </div>
+
+            <div class="bg-slate-900 rounded-xl p-6 border border-slate-700">
+
+                <h3 class="text-gray-400">
+                    Average Score
+                </h3>
+
+                <p id="averageScore" class="text-3xl font-bold mt-2">
+                    80
+                </p>
+
+            </div>
+
+            <div class="bg-slate-900 rounded-xl p-6 border border-slate-700">
+
+                <h3 class="text-gray-400">
+                    Highest Score
+                </h3>
+
+                <p id="highestScore" class="text-3xl font-bold mt-2">
+                    Chioma
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="students.js"></script>
+
+</body>
+</html>
